@@ -1,0 +1,38 @@
+<!--
+<form action="/users" method="post" accept-charset="UTF-8" data-turbo="false">
+  <input type ="hidden" name="authenticity_token" value= "<%= form_authenticity_token %>">
+  
+  <label for="user_name">Username</label>
+  <input type="text" id="user_name" name="user[name]">
+
+  <label for ="user_email">Email</label>
+  <input type ="email" id="user_email" name="user[email]">
+  
+  <label for ="user_password">Password</label>
+  <input type = "password" id ="user_password" name = "user[password]">
+
+  <input type="submit" value="Create Account">
+
+
+</form>
+-->
+
+<h1>Sign Up</h1>
+<%= form_with model: @user, local: true do |form| %>
+  <div>
+    <%= form.label :username %>
+    <%= form.text_field :username %>
+  </div>
+  <div>
+    <%= form.label :email %>
+    <%= form.email_field :email %>
+  </div>
+  <div>
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+  </div>
+  <div>
+    <%= form.submit "Create Account" %>
+  </div>
+<% end %>
+
